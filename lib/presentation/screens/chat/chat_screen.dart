@@ -4,8 +4,8 @@ import 'package:yes_no/domain/entities/message.dart';
 import 'package:yes_no/presentation/providers/chat_provider.dart';
 import 'package:yes_no/presentation/widgets/chat/custom_app_bar.dart';
 
-import '../../widgets/chat/her_messages_bubble.dart';
-import '../../widgets/chat/my_messages_bubble.dart';
+import '../../widgets/chat/receiver_messages_bubble.dart';
+import '../../widgets/chat/sender_messages_bubble.dart';
 import '../../widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -34,10 +34,10 @@ class _ChatWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final message = chatProvider.messages[index];
                   return message.fromWho == FromWho.sender
-                      ? MyMessagesBubble(
+                      ? SenderMessagesBubble(
                           message: message.text,
                         )
-                      : const HerMessagesBubble();
+                      : const ReceiverMessagesBubble();
                 }),
           )),
           Padding(

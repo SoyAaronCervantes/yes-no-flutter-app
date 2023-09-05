@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MyMessagesBubble extends StatelessWidget {
+class SenderMessagesBubble extends StatelessWidget {
   final String message;
-  const MyMessagesBubble({super.key, required this.message});
+  const SenderMessagesBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
