@@ -10,6 +10,11 @@ class MessageFieldBox extends StatelessWidget {
     final FocusNode focusNode = FocusNode();
     final colors = Theme.of(context).colorScheme;
 
+    void sendText(String text) {
+      textController.clear();
+      onValue(text);
+    }
+
     final underlineInputBorder = UnderlineInputBorder(
       borderSide: BorderSide(color: colors.primary),
       borderRadius: BorderRadius.circular(15),
@@ -24,8 +29,7 @@ class MessageFieldBox extends StatelessWidget {
           icon: const Icon(Icons.send_outlined),
           onPressed: () {
             final textValue = textController.value.text;
-            textController.clear();
-            onValue(textValue);
+            sendText(textValue);
           },
         ));
 
@@ -37,9 +41,8 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController,
       decoration: textFormDecoration,
       onFieldSubmitted: (value) {
-        textController.clear();
+        sendText(value);
         focusNode.requestFocus();
-        onValue(value);
       },
     );
   }
