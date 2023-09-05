@@ -33,7 +33,9 @@ class _ChatWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final message = chatProvider.messages[index];
                   return message.fromWho == FromWho.sender
-                      ? const MyMessagesBubble()
+                      ? MyMessagesBubble(
+                          message: message.text,
+                        )
                       : const HerMessagesBubble();
                 }),
           )),
