@@ -39,9 +39,11 @@ class _ChatWidget extends StatelessWidget {
                       : const HerMessagesBubble();
                 }),
           )),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4),
-            child: MessageFieldBox(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 4),
+            child: MessageFieldBox(
+              onValue: chatProvider.sendMessage,
+            ),
           ),
         ],
       ),
