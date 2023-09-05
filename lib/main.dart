@@ -5,9 +5,11 @@ import 'package:yes_no/presentation/providers/char_provider.dart';
 import 'config/theme/app_theme.dart';
 import 'presentation/screens/chat/chat_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
