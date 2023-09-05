@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yes_no/domain/entities/message.dart';
-import 'package:yes_no/presentation/providers/char_provider.dart';
+import 'package:yes_no/presentation/providers/chat_provider.dart';
 import 'package:yes_no/presentation/widgets/chat/custom_app_bar.dart';
 
 import '../../widgets/chat/her_messages_bubble.dart';
