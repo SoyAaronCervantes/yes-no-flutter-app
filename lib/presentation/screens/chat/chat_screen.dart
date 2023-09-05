@@ -37,7 +37,9 @@ class _ChatWidget extends StatelessWidget {
                       ? SenderMessagesBubble(
                           message: message.text,
                         )
-                      : const ReceiverMessagesBubble();
+                      : ReceiverMessagesBubble(
+                          message: message,
+                        );
                 }),
           )),
           Padding(
