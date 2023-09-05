@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yes_no/domain/entities/message.dart';
+import 'package:yes_no/presentation/providers/char_provider.dart';
 import 'package:yes_no/presentation/widgets/chat/custom_app_bar.dart';
 
 import '../../widgets/chat/her_messages_bubble.dart';
@@ -17,6 +20,8 @@ class ChatScreen extends StatelessWidget {
 class _ChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ChatProvider chatProvider = context.watch<ChatProvider>();
+
     return SafeArea(
       child: Column(
         children: [
@@ -24,10 +29,13 @@ class _ChatWidget extends StatelessWidget {
               child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) => (index % 2 == 0)
-                    ? const HerMessagesBubble()
-                    : const MyMessagesBubble()),
+                itemCount: chatProvider.messages.length,
+                itemBuilder: (context, index) {
+                  final message = chatProvider.messages[index];
+                  return message.fromWho == FromWho.sender
+                      ? const MyMessagesBubble()
+                      : const HerMessagesBubble();
+                }),
           )),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4),
