@@ -15,9 +15,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.symmetric(horizontal: 4),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tL2I4MTUxMTA3NmMwNWQ5OTJiZjEyYTBkMmRiZjc5YzFmLmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D'),
+                'https://play-lh.googleusercontent.com/0mgvhYfhG4Qm7UsE8uW4P2SUBw-ujHOTAgcP8DpXUafktzlUza2MRzLDK02AUK4cYZxT'),
           )),
-      title: const Text("Ana Taylor"),
+      title: const Text("La caracola mágica"),
       titleSpacing: 10,
       centerTitle: false,
     );
