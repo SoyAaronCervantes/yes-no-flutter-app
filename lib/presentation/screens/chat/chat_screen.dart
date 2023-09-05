@@ -29,6 +29,7 @@ class _ChatWidget extends StatelessWidget {
               child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 itemCount: chatProvider.messages.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messages[index];
