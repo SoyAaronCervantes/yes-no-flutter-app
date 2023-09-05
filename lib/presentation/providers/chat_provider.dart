@@ -19,9 +19,7 @@ class ChatProvider extends ChangeNotifier {
     final message = Message(text: text, fromWho: FromWho.sender);
     messages.add(message);
 
-    if (text.endsWith('?')) {
-      receiverMessage();
-    }
+    if (text.endsWith('?')) await receiverMessage();
 
     notifyListeners();
     scrollToBottom();
@@ -37,6 +35,7 @@ class ChatProvider extends ChangeNotifier {
   }
 
   Future<void> receiverMessage() async {
-    final receiverMessage = await getYesNoAnswer.getAnswer();
+    final message = await getYesNoAnswer.getAnswer();
+    messages.add(message);
   }
 }
